@@ -13,8 +13,13 @@ pipeline {
             }
         }
         stage('Abrir Serverest') {
-            sh 'nohup npm start > serverest.log 2>&1 &'
-        }
+            steps {
+            sh '''
+                    nohup npm start > serverest.log 2>&1 &
+                    echo "Aguardando Serverest subir..."
+                    sleep 5
+                '''
+            }
         stage('Executar testes') {
             steps {
                 sh 'NO_COLOR=1 npm test'
