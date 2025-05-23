@@ -51,6 +51,7 @@ describe('Testes da Funcionalidade Produtos', () => {
             })
     });
 
+/*
     it('Deve editar um produto já cadastrado', () => {
         cy.request('produtos').then(response => {
             let id = response.body.produtos[0]._id
@@ -70,6 +71,7 @@ describe('Testes da Funcionalidade Produtos', () => {
             })
         })
     });
+*/
 
     it('Deve editar um produto cadastrado previamente', () => {
         let produto = `Produto EBAC ${Math.floor(Math.random() * 100000000)}`
