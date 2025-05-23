@@ -1,4 +1,5 @@
 {
+
   "name": "teste-api-ebac",
   "version": "1.0.0",
   "description": "",
@@ -14,5 +15,13 @@
   "dependencies": {
     "cypress": "^13.6.0",
     "joi": "^17.12.0"
+  },
+  "scripts_": {
+  "start": "npx serverest",
+  "cy:run": "npx cypress run",
+  "test": "npm run cy:run"
   }
+
 }
+
+
