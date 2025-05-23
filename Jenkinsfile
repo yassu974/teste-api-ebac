@@ -8,15 +8,14 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'NO_COLOR=1 npm test'
-            }
-        }
         stage('Serverest') {
             steps {
                 sh 'start /b npm start'
         }
-        }
+        }stage('Test') {
+            steps {
+                sh 'NO_COLOR=1 npm test'
+            }
+        }        
     }
 }
