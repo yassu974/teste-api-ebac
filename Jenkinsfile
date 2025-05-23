@@ -16,13 +16,11 @@ pipeline {
             steps {
             sh '''
             nohup npm start > serverest.log 2>&1 &
-            echo "Esperando ServeRest responder..."
-            for i in {1..10}; do
-            nc -z localhost 3000 && echo "Serverest pronto" && break
-            sleep 2
-            done
+            echo "Aguardando ServeRest subir..."
+            sleep 5
             '''
             }
+        }
         stage('Executar testes') {
             steps {
                 sh 'NO_COLOR=1 npm test'
