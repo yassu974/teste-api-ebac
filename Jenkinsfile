@@ -2,18 +2,22 @@ pipeline {
     agent any
 
     stages {
-        stage('Serverest') {
+        stage('Clonar repositorio') {
+            steps {
+                git branch: 'main', url: 'https://github.com/yassu974/teste-api-ebac.git'
+            }
+        }
+        stage('Abrir Serverest') {
             steps {
                 sh 'start /b npm start'
             }
         }
-        stage('Setup') {
+        stage('Instalar dependencias') {
             steps {
-                git branch: 'main', url: 'https://github.com/yassu974/teste-api-ebac.git'
                 sh 'npm install'
             }
-        }
-        stage('Test') {
+        }   
+        stage('Executar testes') {
             steps {
                 sh 'NO_COLOR=1 npm test'
             }
