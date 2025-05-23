@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Abrir Serverest') {
             steps {
-                sh 'start /b npm start'
+                sh 'nohup npm start > serverest.log 2>&1 &'
             }
         }
         stage('Executar testes') {
@@ -23,4 +23,5 @@ pipeline {
             }
         }        
     }
+
 }
